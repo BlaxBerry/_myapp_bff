@@ -11,14 +11,11 @@ export const getScenarioList: RequestHandler = async (req, res) => {
 
   try {
     const url = `${process.env.API_SERVER_SCENARIO as string}/api/list`;
+
     const re = await fetch(url);
     const data = await re.json();
 
-    res.json({
-      code: 200,
-      error: null,
-      data,
-    });
+    res.json(data);
   } catch (error) {
     res.json({
       code: 500,
@@ -42,11 +39,7 @@ export const getScenarioById: RequestHandler = async (req, res) => {
     const re = await fetch(url);
     const data = await re.json();
 
-    res.json({
-      code: 200,
-      error: null,
-      data,
-    });
+    res.json(data);
   } catch (error) {
     res.json({
       code: 500,
@@ -70,11 +63,7 @@ export const deleteScenarioById: RequestHandler = async (req, res) => {
     const re = await fetch(url, { method: "delete" });
     const data = await re.json();
 
-    res.json({
-      code: 200,
-      error: null,
-      data,
-    });
+    res.json(data);
   } catch (error) {
     res.json({
       code: 500,
@@ -98,11 +87,7 @@ export const updateScenarioById: RequestHandler = async (req, res) => {
     const re = await fetch(url, { method: "patch" });
     const data = await re.json();
 
-    res.json({
-      code: 200,
-      error: null,
-      data,
-    });
+    res.json(data);
   } catch (error) {
     res.json({
       code: 500,
