@@ -1,8 +1,13 @@
 import express from "express";
 
-import { initEnvVariables, initRoutes } from "./utils/tools";
+import { initEnvVariables, initRoutes, initServerCORS } from "./utils/tools";
 
 const app = express();
+
+initServerCORS(app, [
+  "https://myapp-admin.onrender.com",
+  "http://localhost:3000",
+]);
 
 initEnvVariables();
 const serverPort = process.env.BFF_SERVER_PORT;
