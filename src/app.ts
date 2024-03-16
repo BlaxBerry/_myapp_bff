@@ -5,8 +5,9 @@ import { initEnvVariables, initRoutes, initServerCORS } from "./utils/tools";
 const app = express();
 
 initServerCORS(app, [
-  "https://myapp-admin.onrender.com",
   "http://localhost:3000",
+  "https://myapp-admin.onrender.com",
+  "https://myapp-admin.vercel.app",
 ]);
 
 initEnvVariables();
